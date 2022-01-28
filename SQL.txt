@@ -1,0 +1,87 @@
+		Q1.
+create table Employee (
+Emp_no int (5) primary key,
+Emp_name varchar (20),
+Join_date date,
+Basic_pay_fixed_at int(7),
+Date_of_birth date
+);
+
+
+insert into values
+(1001,"charles Babbage",'2000-06-01',8000,'1973-10-03'),
+(1002,"George Boole",'2001-06-01',5000,'1972-12-04'),
+(1003,"E.f codd",'2001-06-01',8000,'1969-03-06'),
+(1004,"Bill Gates",'2003-07-01',5000,'1995-10-09'),
+(1005,"Tony Greig",'2004-08-01',8000,"1985-05-04');
+
+select* from Employee;
+
+
+			Q2.
+create table Player(
+Roll_no int (5) Primary key,
+Name varchar (20)
+);
+
+create table Match(
+Match_no int (5) primary key,
+Roll_no int (5) references Player(Roll_no),
+Match_date date,
+Opponent varchar (20)
+);
+
+insert into Player(Roll_no,Name)
+values(10,"Vijay Amrithraj"),
+(20,"Leander Paes"),
+(30,"Mahesh Bhupati"),
+(40,"Sania Mirza");
+
+insert into Match (Match_no,Roll_no,Match_data,Opponent)
+values(1,20,'2008-07-01',"Washington"),
+(2,30,'2008-01-12',"Sampras"),
+(3,20,'2008-08-12',"Borg"),
+(4,30,'2008-03-20',"Vijay");
+
+	i)
+		select * from Player EQUI JOIN Match ON Player.Roll_no = Match.Roll_no;
+	ii)
+		Select * from Player FULL OUTER JOIN Match ON Player.Roll_no = Match.Roll_no;
+
+
+
+		Q3.
+create table STUDENT(
+Roll_no int (5) primary key,
+student_name varchar (20),
+Address varchar (50),
+Date_of_admission date,
+class varchar (10),
+Section varchar (5),
+Contact_no varchar (15)
+);
+
+a)
+insert into STUDENT(Roll_no int,student_name,Address,Date_of_admission,class,Section,Contact_no)
+values
+(1,"Riya","Panbazar",'2006-06-01',"BCA 1st sem","1st sem","+919610102789"),
+(2,"Dimpi","Ulubari",'2007-01-01',"BCA 2nd sem","2nd sem","+919900251421"),
+(3,"Rohan","Panbazar",'2005-01-01',"BCA 2nd sem","2nd sem","+919214521110"),
+(4,"Viraj","Paltanbazar",'2007-06-01",BCA 3rd sem","3rd sem","+919123451123");
+
+b)
+	Delete from STUDENT
+	where Roll_no=2;
+	Select * from STUDENT;
+c)
+	Select * from STUDENT 
+	where Roll_no>1;
+d)
+	Select * from STUDENT
+	where Date_of_admission<"2006-01-01";
+e)
+	update Student
+	set Student_name=Amar
+	where Roll_no=3;
+	
+	select * from STUDENT;  
